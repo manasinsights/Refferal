@@ -1,0 +1,1020 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Exclusive referral opportunity. Join today and unlock premium benefits.">
+    <title>Referral Program — Exclusive Access</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-bg: #ffffff;
+            --color-bg-soft: #fafafa;
+            --color-bg-muted: #f5f5f5;
+            --color-text: #0a0a0a;
+            --color-text-secondary: #525252;
+            --color-text-muted: #737373;
+            --color-border: rgba(0, 0, 0, 0.06);
+            --shadow-sm: 0 2px 12px rgba(0, 0, 0, 0.04);
+            --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.08);
+            --shadow-lg: 0 20px 40px -8px rgba(0, 0, 0, 0.1);
+            --radius: 16px;
+            --radius-lg: 24px;
+            --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--color-bg);
+            color: var(--color-text);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
+
+        /* Typography */
+        h1, h2, h3, h4 {
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+            font-weight: 600;
+        }
+
+        h1 { font-size: clamp(2.5rem, 5vw, 4.5rem); }
+        h2 { font-size: clamp(1.75rem, 3vw, 2.5rem); }
+        h3 { font-size: 1.25rem; }
+        p { color: var(--color-text-secondary); }
+
+        /* Layout */
+        .container {
+            width: 92%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        section {
+            padding: 120px 0;
+            position: relative;
+        }
+
+        @media (max-width: 768px) {
+            section { padding: 80px 0; }
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--color-border);
+            transition: var(--transition);
+        }
+
+        .nav-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 72px;
+        }
+
+        .logo {
+            font-weight: 700;
+            font-size: 1.25rem;
+            letter-spacing: -0.03em;
+            color: var(--color-text);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--color-text-secondary);
+            font-size: 0.875rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 1.5px;
+            background: var(--color-text);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--color-text);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        @media (max-width: 640px) {
+            .nav-links { display: none; }
+        }
+
+        /* Hero */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(180deg, var(--color-bg-soft) 0%, var(--color-bg) 100%);
+            padding-top: 72px;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 16px;
+            background: var(--color-bg);
+            border: 1px solid var(--color-border);
+            border-radius: 100px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--color-text-secondary);
+            margin-bottom: 32px;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .hero-badge .dot {
+            width: 8px;
+            height: 8px;
+            background: #22c55e;
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        .hero h1 {
+            max-width: 800px;
+            margin: 0 auto 24px;
+            background: linear-gradient(135deg, #0a0a0a 0%, #404040 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            font-size: 1.125rem;
+            max-width: 560px;
+            margin: 0 auto 40px;
+            color: var(--color-text-muted);
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 18px 40px;
+            border-radius: 12px;
+            font-size: 1rem;
+            font-weight: 500;
+            letter-spacing: -0.01em;
+            border: none;
+            cursor: pointer;
+            transition: var(--transition);
+            text-decoration: none;
+        }
+
+        .btn-primary {
+            background: var(--color-text);
+            color: #fff;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+        }
+
+        .btn-primary:hover:not(:disabled) {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 32px rgba(0,0,0,0.18);
+        }
+
+        .btn-primary:active:not(:disabled) {
+            transform: translateY(0);
+        }
+
+        .btn-primary:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        .btn-secondary {
+            background: var(--color-bg);
+            color: var(--color-text);
+            border: 1px solid var(--color-border);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .btn-secondary:hover {
+            background: var(--color-bg-soft);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .spinner {
+            width: 18px;
+            height: 18px;
+            border: 2px solid rgba(255,255,255,0.3);
+            border-top-color: #fff;
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* Status Message */
+        .status-message {
+            margin-top: 24px;
+            font-size: 0.9375rem;
+            color: var(--color-text-secondary);
+            min-height: 28px;
+            opacity: 0;
+            transform: translateY(8px);
+            transition: all 0.4s ease;
+        }
+
+        .status-message.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Section Headers */
+        .section-header {
+            text-align: center;
+            max-width: 640px;
+            margin: 0 auto 64px;
+        }
+
+        .section-header h2 {
+            margin-bottom: 16px;
+        }
+
+        .section-header p {
+            font-size: 1.125rem;
+            color: var(--color-text-muted);
+        }
+
+        /* Cards */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+        }
+
+        .card {
+            background: var(--color-bg);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-lg);
+            padding: 40px;
+            transition: var(--transition);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-lg);
+            border-color: rgba(0,0,0,0.1);
+        }
+
+        .card-icon {
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--color-bg-muted);
+            border-radius: 12px;
+            margin-bottom: 24px;
+            color: var(--color-text);
+        }
+
+        .card h3 {
+            margin-bottom: 12px;
+        }
+
+        .card p {
+            font-size: 0.9375rem;
+            line-height: 1.6;
+        }
+
+        /* Steps */
+        .steps {
+            background: var(--color-bg-soft);
+        }
+
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 32px;
+            counter-reset: step;
+        }
+
+        .step-item {
+            position: relative;
+            padding: 32px;
+            background: var(--color-bg);
+            border-radius: var(--radius);
+            border: 1px solid var(--color-border);
+            transition: var(--transition);
+        }
+
+        .step-item:hover {
+            box-shadow: var(--shadow-md);
+            transform: translateY(-4px);
+        }
+
+        .step-item::before {
+            counter-increment: step;
+            content: counter(step);
+            position: absolute;
+            top: -16px;
+            left: 32px;
+            width: 40px;
+            height: 40px;
+            background: var(--color-text);
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            font-size: 0.875rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        .step-item h3 {
+            margin-top: 16px;
+            margin-bottom: 8px;
+        }
+
+        .step-item p {
+            font-size: 0.9375rem;
+        }
+
+        /* Benefits */
+        .benefit-card {
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+            padding: 32px;
+            background: var(--color-bg);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius);
+            transition: var(--transition);
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .benefit-icon {
+            flex-shrink: 0;
+            width: 44px;
+            height: 44px;
+            background: var(--color-bg-muted);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--color-text);
+        }
+
+        .benefit-content h3 {
+            margin-bottom: 6px;
+            font-size: 1.1rem;
+        }
+
+        .benefit-content p {
+            font-size: 0.9375rem;
+            margin: 0;
+        }
+
+        /* FAQ */
+        .faq-list {
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .faq-item {
+            background: var(--color-bg);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius);
+            overflow: hidden;
+            transition: var(--transition);
+        }
+
+        .faq-item:hover {
+            border-color: rgba(0,0,0,0.1);
+        }
+
+        .faq-question {
+            width: 100%;
+            padding: 24px 32px;
+            background: none;
+            border: none;
+            text-align: left;
+            font-family: inherit;
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--color-text);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.3s ease;
+        }
+
+        .faq-question:hover {
+            background: var(--color-bg-soft);
+        }
+
+        .faq-icon {
+            width: 20px;
+            height: 20px;
+            transition: transform 0.3s ease;
+            flex-shrink: 0;
+            margin-left: 16px;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1), padding 0.4s ease;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 300px;
+            padding: 0 32px 24px;
+        }
+
+        .faq-answer p {
+            font-size: 0.9375rem;
+            line-height: 1.7;
+        }
+
+        /* Privacy */
+        .privacy-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            margin-top: 48px;
+        }
+
+        .privacy-card {
+            padding: 32px;
+            border-radius: var(--radius);
+            background: var(--color-bg-soft);
+            border: 1px solid var(--color-border);
+        }
+
+        .privacy-card h3 {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .privacy-card p {
+            font-size: 0.9375rem;
+            margin: 0;
+        }
+
+        /* Disclaimer */
+        .disclaimer {
+            background: var(--color-bg-soft);
+            border-top: 1px solid var(--color-border);
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .disclaimer-box {
+            background: var(--color-bg);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-lg);
+            padding: 48px;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .disclaimer-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--color-text-muted);
+            margin-bottom: 20px;
+        }
+
+        .disclaimer-box p {
+            font-size: 0.9375rem;
+            line-height: 1.8;
+            color: var(--color-text-secondary);
+        }
+
+        @media (max-width: 640px) {
+            .disclaimer-box { padding: 32px 24px; }
+        }
+
+        /* Footer */
+        footer {
+            padding: 48px 0;
+            background: var(--color-bg);
+            border-top: 1px solid var(--color-border);
+        }
+
+        .footer-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 24px;
+        }
+
+        .footer-copyright {
+            font-size: 0.875rem;
+            color: var(--color-text-muted);
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 28px;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            font-size: 0.875rem;
+            color: var(--color-text-secondary);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--color-text);
+            text-decoration: underline;
+        }
+
+        @media (max-width: 640px) {
+            .footer-inner { flex-direction: column; text-align: center; }
+        }
+
+        /* Scroll Reveal Animation */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .stagger-1 { transition-delay: 0.1s; }
+        .stagger-2 { transition-delay: 0.2s; }
+        .stagger-3 { transition-delay: 0.3s; }
+        .stagger-4 { transition-delay: 0.4s; }
+
+        /* Utility */
+        .text-center { text-align: center; }
+        .mt-16 { margin-top: 64px; }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="container nav-inner">
+            <a href="#" class="logo">Referral</a>
+            <ul class="nav-links">
+                <li><a href="#how-it-works">How it Works</a></li>
+                <li><a href="#benefits">Benefits</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#privacy">Privacy</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="container">
+            <div class="hero-badge reveal">
+                <span class="dot"></span>
+                Limited Referral Access
+            </div>
+            <h1 class="reveal stagger-1">Unlock Exclusive Benefits Through Our Referral Program</h1>
+            <p class="reveal stagger-2">
+                Participate in our community-driven referral initiative. Seamless, secure, and designed to reward your trust.
+            </p>
+            <div class="reveal stagger-3">
+                <button id="continueBtn" class="btn btn-primary" onclick="handleContinue()">
+                    Continue
+                </button>
+                <button id="manualBtn" class="btn btn-secondary" style="display:none;" onclick="window.open('https://1024terabox.com/s/1meWaBNTUijjaQFP-BtMl_Q', '_blank'); window.location.href='https://dm.1024terabox.com/referral/81364523343752';">
+                    Continue Manually
+                </button>
+            </div>
+            <div id="statusMsg" class="status-message"></div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section id="how-it-works">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2>How the Referral Process Works</h2>
+                <p>Our streamlined system ensures a transparent and straightforward experience from start to finish.</p>
+            </div>
+            <div class="card-grid">
+                <div class="card reveal stagger-1">
+                    <div class="card-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                    </div>
+                    <h3>Community Driven</h3>
+                    <p>Our referral ecosystem is powered by members who share opportunities with their network, creating a cycle of mutual benefit.</p>
+                </div>
+                <div class="card reveal stagger-2">
+                    <div class="card-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+                    </div>
+                    <h3>Instant Validation</h3>
+                    <p>Each referral is processed through secure, automated verification to ensure eligibility and maintain program integrity.</p>
+                </div>
+                <div class="card reveal stagger-3">
+                    <div class="card-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>
+                    </div>
+                    <h3>Transparent Tracking</h3>
+                    <p>Monitor the status of your participation with clear, real-time updates and straightforward milestone indicators.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Steps -->
+    <section class="steps" id="steps">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2>Simple Step-by-Step Guide</h2>
+                <p>Get started in minutes. No complex forms or hidden requirements.</p>
+            </div>
+            <div class="steps-grid">
+                <div class="step-item reveal stagger-1">
+                    <h3>Click to Begin</h3>
+                    <p>Press the Continue button above to open the referral gateway. The process starts instantly with a single click.</p>
+                </div>
+                <div class="step-item reveal stagger-2">
+                    <h3>Explore the Offer</h3>
+                    <p>Review the program details and eligibility criteria presented on the destination platform at your own pace.</p>
+                </div>
+                <div class="step-item reveal stagger-3">
+                    <h3>Complete Enrollment</h3>
+                    <p>Follow the on-screen instructions to finalize your participation and activate any applicable benefits.</p>
+                </div>
+                <div class="step-item reveal stagger-4">
+                    <h3>Enjoy the Rewards</h3>
+                    <p>Once verified, your account will reflect the associated rewards according to the program's terms and schedule.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits -->
+    <section id="benefits">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2>Benefits of Joining</h2>
+                <p>Discover why thousands of participants trust this referral opportunity.</p>
+            </div>
+            <div class="card-grid">
+                <div class="benefit-card reveal stagger-1">
+                    <div class="benefit-icon">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                    </div>
+                    <div class="benefit-content">
+                        <h3>Secure Participation</h3>
+                        <p>End-to-end encryption and verified pathways protect your data throughout the entire process.</p>
+                    </div>
+                </div>
+                <div class="benefit-card reveal stagger-2">
+                    <div class="benefit-icon">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
+                    </div>
+                    <div class="benefit-content">
+                        <h3>Priority Access</h3>
+                        <p>Referral members often receive early access to new features, promotions, and exclusive opportunities.</p>
+                    </div>
+                </div>
+                <div class="benefit-card reveal stagger-3">
+                    <div class="benefit-icon">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+                    </div>
+                    <div class="benefit-content">
+                        <h3>No Hidden Costs</h3>
+                        <p>Participation is completely free. There are no subscription fees or surprise charges at any stage.</p>
+                    </div>
+                </div>
+                <div class="benefit-card reveal stagger-1">
+                    <div class="benefit-icon">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                    </div>
+                    <div class="benefit-content">
+                        <h3>Verified & Trustworthy</h3>
+                        <p>Every opportunity is vetted for legitimacy, ensuring you only engage with genuine referral programs.</p>
+                    </div>
+                </div>
+                <div class="benefit-card reveal stagger-2">
+                    <div class="benefit-icon">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect><line x1="1" y1="10" x2="23" y2="10"></line></svg>
+                    </div>
+                    <div class="benefit-content">
+                        <h3>Instant Activation</h3>
+                        <p>Benefits are typically applied immediately upon successful completion of the referral requirements.</p>
+                    </div>
+                </div>
+                <div class="benefit-card reveal stagger-3">
+                    <div class="benefit-icon">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+                    </div>
+                    <div class="benefit-content">
+                        <h3>Dedicated Support</h3>
+                        <p>Access responsive customer service channels for any questions regarding your referral status.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" style="background: var(--color-bg-soft);">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2>Frequently Asked Questions</h2>
+                <p>Quick answers to common questions about the referral process.</p>
+            </div>
+            <div class="faq-list">
+                <div class="faq-item reveal stagger-1">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        Is there any cost to participate?
+                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>No. Participation in this referral program is entirely voluntary and free of charge. You will never be asked for payment information to access the basic referral flow.</p>
+                    </div>
+                </div>
+                <div class="faq-item reveal stagger-2">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        How long does the process take?
+                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>The initial referral flow takes less than a minute. Once you click Continue, you will be guided through the necessary steps. Final reward processing times depend on the destination platform's own verification schedule.</p>
+                    </div>
+                </div>
+                <div class="faq-item reveal stagger-3">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        Is my personal information secure?
+                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes. This landing page does not collect, store, or process any personal data. You are redirected directly to the official platform, which maintains its own security and privacy standards.</p>
+                    </div>
+                </div>
+                <div class="faq-item reveal stagger-4">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        Can I participate more than once?
+                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Eligibility for repeat participation is determined by the destination platform's terms. Please review their specific guidelines after clicking Continue to understand any limitations.</p>
+                    </div>
+                </div>
+                <div class="faq-item reveal stagger-1">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        What if the automatic redirect does not work?
+                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>If your browser blocks the automatic navigation, a manual "Continue" button will appear. You can also disable your popup blocker temporarily or try a different browser for the best experience.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Privacy & Security -->
+    <section id="privacy">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2>Privacy & Security</h2>
+                <p>Your trust is our priority. This page is designed with transparency and safety at its core.</p>
+            </div>
+            <div class="privacy-grid">
+                <div class="privacy-card reveal stagger-1">
+                    <h3>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                        No Data Collection
+                    </h3>
+                    <p>This landing page does not use cookies, trackers, or analytics scripts that harvest personal information. We do not know who visits this page.</p>
+                </div>
+                <div class="privacy-card reveal stagger-2">
+                    <h3>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                        Direct Redirects
+                    </h3>
+                    <p>You are sent directly to the official platform without intermediary data brokers. The links are unmodified and point to verified domains.</p>
+                </div>
+                <div class="privacy-card reveal stagger-3">
+                    <h3>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                        Full Transparency
+                    </h3>
+                    <p>Every action on this page is visible and explicit. We do not run background scripts, hidden iframes, or deceptive click handlers.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Disclaimer -->
+    <section class="disclaimer" id="disclaimer">
+        <div class="container">
+            <div class="disclaimer-box reveal">
+                <div class="disclaimer-label">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+                    Disclaimer
+                </div>
+                <p>
+                    This website is an independent referral landing page created solely to share a referral opportunity. Participation is completely voluntary. No earnings, rewards, or outcomes are guaranteed and individual results may vary depending on the referral program's own rules and eligibility requirements. Before participating, users should review the terms, privacy policy, and conditions of the destination website. The owner of this page is not responsible for changes to the referral program, account eligibility, reward availability, website functionality, or any loss resulting from participation. By continuing, users acknowledge that they are visiting an external website at their own discretion.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-inner">
+            <p class="footer-copyright">© 2026 Manas Kumar. All Rights Reserved.</p>
+      
+        </div>
+    </footer>
+
+    <script>
+        // Referral Links
+        const INITIAL_LINK = 'https://1024terabox.com/s/1meWaBNTUijjaQFP-BtMl_Q';
+        const FINAL_LINK = 'https://dm.1024terabox.com/referral/81364523343752';
+
+        function handleContinue() {
+            const btn = document.getElementById('continueBtn');
+            const manualBtn = document.getElementById('manualBtn');
+            const status = document.getElementById('statusMsg');
+
+            // Disable primary button and show loading state
+            btn.disabled = true;
+            btn.innerHTML = '<span class="spinner"></span> Opening...';
+
+            // Attempt to open initial link in a new tab
+            let newWindow;
+            let popupBlocked = false;
+            try {
+                newWindow = window.open(INITIAL_LINK, '_blank');
+                if (!newWindow || newWindow.closed || typeof newWindow.closed === 'undefined') {
+                    popupBlocked = true;
+                }
+            } catch (e) {
+                popupBlocked = true;
+                console.error('Popup blocked:', e);
+            }
+
+            // If popup is blocked, show manual fallback immediately
+            if (popupBlocked) {
+                status.innerHTML = 'Your browser prevented the automatic popup.<br>Please use the manual button below to continue.';
+                status.classList.add('visible');
+                btn.style.display = 'none';
+                manualBtn.style.display = 'inline-flex';
+                return;
+            }
+
+            // Show countdown message
+            status.textContent = 'Opening referral page... You will be redirected shortly.';
+            status.classList.add('visible');
+
+            let seconds = 2;
+            const timer = setInterval(() => {
+                if (seconds > 0) {
+                    status.textContent = `Redirecting in ${seconds} second${seconds !== 1 ? 's' : ''}...`;
+                    seconds--;
+                } else {
+                    clearInterval(timer);
+                    status.textContent = 'Redirecting now...';
+                    
+                    // Attempt automatic redirect to final link
+                    try {
+                        window.location.href = FINAL_LINK;
+                    } catch (e) {
+                        console.error('Redirect failed:', e);
+                    }
+
+                    // Fallback: if still on page after 1.5s, show manual button
+                    setTimeout(() => {
+                        if (window.location.href !== FINAL_LINK) {
+                            status.innerHTML = 'Automatic redirect was delayed or blocked.<br>Please click below to continue manually.';
+                            btn.style.display = 'none';
+                            manualBtn.style.display = 'inline-flex';
+                        }
+                    }, 1500);
+                }
+            }, 1000);
+        }
+
+        // FAQ Accordion
+        function toggleFaq(button) {
+            const item = button.parentElement;
+            const isActive = item.classList.contains('active');
+            
+            // Close all
+            document.querySelectorAll('.faq-item').forEach(faq => {
+                faq.classList.remove('active');
+            });
+
+            // Open clicked if it wasn't active
+            if (!isActive) {
+                item.classList.add('active');
+            }
+        }
+
+        // Scroll Reveal Animation
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Add slight nav background on scroll
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 20) {
+                nav.style.boxShadow = '0 2px 20px rgba(0,0,0,0.06)';
+            } else {
+                nav.style.boxShadow = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
